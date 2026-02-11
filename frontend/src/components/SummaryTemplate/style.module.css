@@ -1,0 +1,87 @@
+/* 全体 */
+.container {
+    min-height: 100vh;
+    max-width: 420px;
+    margin: 5% auto;
+    padding: 32px 24px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* 上部 */
+.header h1 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* 本文 */
+.content {
+    margin-top: 8px;
+}
+
+.mainText {
+    font-size: 16px;
+    color: #222;
+}
+
+/* 感情履歴 */
+.emotionHistory {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.label {
+    font-size: 13px;
+    color: #666;
+}
+
+.emojis {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.arrow {
+    font-size: 16px;
+    color: #999;
+}
+
+/* 提案 */
+.suggestion {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.suggestionLead {
+    font-size: 15px;
+    color: #444;
+}
+
+.suggestionBox {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.suggestionTitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.suggestionBox ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.suggestionBox li {
+    font-size: 14px;
+    color: #555;
+}

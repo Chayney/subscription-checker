@@ -1,0 +1,110 @@
+/* 全体 */
+.container {
+    min-height: 100vh;
+    max-width: 420px;
+    margin: 5% auto;
+    padding: 24px;
+}
+
+/* 上部 */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.backButton {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+/* フォーム */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 13px;
+    color: #555;
+}
+
+input {
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #111;
+}
+
+/* 契約目的 */
+.purpose {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.purposeLabel {
+    font-size: 13px;
+    color: #555;
+}
+
+.purposeButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.purposeButtons button {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 9999px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+
+.purposeButtons button:hover {
+    border-color: #111;
+}
+
+/* 保存 */
+.submitArea {
+    margin-top: 3%;
+}
+
+.saveButton {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 9999px;
+    border: none;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    opacity: 0.9;
+}

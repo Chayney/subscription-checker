@@ -1,0 +1,62 @@
+/* 全体 */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    gap: 64px;
+}
+
+/* 上部 */
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.catch {
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 0.04em;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+}
+
+/* 中央説明 */
+.description {
+    max-width: 420px;
+}
+
+.description p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* CTA */
+.cta {
+    margin-top: 24px;
+}
+
+.ctaButton {
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    border: 1px solid #111;
+    background-color: #111;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    color: #111;
+}
