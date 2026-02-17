@@ -1,41 +1,87 @@
+import { useNavigate } from 'react-router-dom';
+import type { DataPoint } from '../../types/subscription';
 import styles from './style.module.css';
+import {
+    LineChart,
+    Line,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    ResponsiveContainer
+} from "recharts";
+import { NAVIGATION_LIST } from '../../const/navigation';
+
+const data: DataPoint[] = [
+    { month: "3ヶ月前", count: 12 },
+    { month: "2ヶ月前", count: 4 },
+    { month: "先月", count: 0 }
+];
 
 export const SummaryTemplate = () => {
+    const navigate = useNavigate();
+    const handleView = () => {
+        navigate(NAVIGATION_LIST.CHECKIN);
+    }
+    
     return (
-        <main className={styles.container}>
-            <header className={styles.header}>
-                <h1>このサブスクの状態</h1>
-            </header>
-            <section className={styles.content}>
-                <p className={styles.mainText}>
-                    「健康のため」に始めたサブスク<br />
-                    直近3ヶ月は「忙しい」が理由で未使用
-                </p>
-            </section>
-            <section className={styles.emotionHistory}>
-                <p className={styles.label}>感情の推移</p>
-                <div className={styles.emojis}>
-                    <span>😊</span>
-                    <span className={styles.arrow}>→</span>
-                    <span>😐</span>
-                    <span className={styles.arrow}>→</span>
-                    <span>😞</span>
-                </div>
-            </section>
-            <section className={styles.suggestion}>
-                <p className={styles.suggestionLead}>
-                    今すぐ決めなくても大丈夫です
-                </p>
+        // ログインユーザー専用トップページ
+        <div className={styles.container}>
+            <h1>サブスク利用状況チェック</h1>
+            {/* 振り返るを押したら月次チェックインページに飛ぶ */}
+            <div className={styles.navigation}>
+                {/* すでに月次チェックイン済みなら非表示 */}
+                <button className={styles.skip} onClick={handleView}>振り返る</button>
 
-                <div className={styles.suggestionBox}>
-                    <p className={styles.suggestionTitle}>おすすめ：</p>
-                    <ul>
-                        <li>来月もう一度振り返る</li>
-                        <li>一時停止扱いにする</li>
-                        <li>解約を検討する</li>
-                    </ul>
+                <button className={styles.skip}>ログアウト</button>
+            </div>
+            <div className={styles.subtitle}>
+                {/* purposeを使う */}
+                「健康のため」に始めたサブスク / 月額 3,000円
+            </div>
+            <div className={styles.section}>
+                <strong>直近3ヶ月の利用状況</strong>
+                <div className={styles.chartBox} style={{ width: "100%", height: 250 }}>
+                    <ResponsiveContainer>
+                        <LineChart
+                            data={data}
+                            margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
+                        >
+                            <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+                            <XAxis dataKey="month" />
+                            <YAxis allowDecimals={false} />
+                            <Tooltip />
+                            <Line
+                                type="monotone"
+                                dataKey="count"
+                                stroke="#1565c0"
+                                strokeWidth={2}
+                                dot={{ r: 5, fill: "#1565c0" }}
+                            />
+                        </LineChart>
+                    </ResponsiveContainer>
                 </div>
-            </section>
-        </main>
+                <div className={styles.statBox}>
+                    支払総額：9,000円
+                </div>
+            </div>
+
+            {/* <div className={styles.section}>
+                <div className={styles.question}>
+                    このサブスクは、今後も使用したいと思いますか？
+                </div>
+                <div className={styles.buttonGroup}>
+                    
+                    <button className={styles.btnYes}>思います</button>
+                    
+                    <button className={styles.btnMaybe}>迷っている</button>
+                    
+                    <button className={styles.btnNo}>思わない</button>
+                </div>
+            </div>
+            <div className={styles.note}>
+                今すぐ決めなくても大丈夫です。
+            </div> */}
+        </div>
     )
 }

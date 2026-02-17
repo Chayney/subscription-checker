@@ -7,6 +7,9 @@ export const TopTemplate = () => {
     const handleView = () => {
         navigate(NAVIGATION_LIST.CREATE);
     }
+    const handleLoginView = () => {
+        navigate(NAVIGATION_LIST.LOGIN);
+    }
 
     return (
         <main className={styles.container}>
@@ -31,6 +34,10 @@ export const TopTemplate = () => {
                     ＋ サブスクを1つ登録する
                 </button>
             </section>
+            
+            <div className={styles.area}>
+                <button className={styles.button} onClick={handleLoginView}>登録済みの方はこちら</button>
+            </div>
         </main>
     )
 }

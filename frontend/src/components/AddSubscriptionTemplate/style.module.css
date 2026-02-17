@@ -89,6 +89,12 @@ input:focus {
     border-color: #111;
 }
 
+.purposeButtons button.selected {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
 /* 保存 */
 .submitArea {
     margin-top: 3%;
@@ -107,4 +113,96 @@ input:focus {
 
 .saveButton:hover {
     opacity: 0.9;
+}
+
+/* モーダルの背景 */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 半透明の黒 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* モーダル本体 */
+.modal {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+/* 注意書き */
+.modalNotice {
+    font-size: 0.85rem;
+    color: #666;
+    /* 薄めのグレーで注意書き感 */
+    margin-top: 8px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* モーダル内のボタン配置 */
+.modalButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+/* アカウント作成ボタン */
+.createAccountButton {
+    flex: 1;
+    margin-right: 8px;
+    padding: 10px 16px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.createAccountButton:hover {
+    background-color: #005bb5;
+}
+
+/* 後でボタン */
+.laterButton {
+    flex: 1;
+    margin-left: 8px;
+    padding: 10px 16px;
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.laterButton:hover {
+    background-color: #cfcfcf;
 }

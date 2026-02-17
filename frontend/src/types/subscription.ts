@@ -10,3 +10,8 @@ export type Subscription = {
     purpose: Purpose;
     status: SubscriptionStatus;
 }
+
+export type DataPoint = {
+    month: string;
+    count: number;
+}

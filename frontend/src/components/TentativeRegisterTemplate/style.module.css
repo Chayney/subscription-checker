@@ -1,0 +1,59 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    gap: 64px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.subInfo {
+    margin: 3% 0;
+    padding: 15px;
+    width: 40%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.subInfo p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.notice {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.buttons button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.saveBtn {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.deleteBtn {
+    background-color: #f44336;
+    color: #fff;
+}

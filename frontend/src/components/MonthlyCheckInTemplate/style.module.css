@@ -1,6 +1,5 @@
-/* 全体 */
 .container {
-    min-height: 100vh;
+    min-height: 600px;
     max-width: 420px;
     margin: 5% auto;
     padding: 24px;
@@ -9,115 +8,122 @@
     justify-content: space-between;
 }
 
-/* 上部 */
-.header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 24px;
 }
 
-.header h1 {
-    font-size: 18px;
-    font-weight: 500;
+h1 {
+    font-size: 20px;
+    margin: 0;
 }
 
 .skip {
     background: none;
     border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.card {
+    margin-bottom: 5%;
+}
+
+.inputArea {
+    margin-top: 10%;
+}
+
+.service-name {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.price {
     font-size: 14px;
     color: #777;
-    cursor: pointer;
+    margin-bottom: 20px;
 }
 
-/* カード */
-.card {
-    margin-top: 40px;
-    padding: 24px;
-    border: 1px solid #eee;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.serviceName {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.question {
+.label {
     font-size: 14px;
-    color: #555;
+    margin-bottom: 6px;
 }
 
-/* 絵文字 */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
 .emojiRow {
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    justify-content: space-around;
+    gap: 16px;
 }
 
-.emoji {
-    font-size: 28px;
-    background: none;
+.emoji-row button {
+    font-size: 24px;
+    background: #f1f3f6;
     border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.1s ease;
+    transition: 0.2s;
 }
 
-.emoji:hover {
-    transform: scale(1.1);
+.emoji-row button:hover {
+    background: #e3e7ed;
 }
 
-/* 理由 */
-.reason {
-    margin-top: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.slider-container {
+    margin-bottom: 20px;
 }
 
-.reasonLabel {
+input[type="range"] {
+    width: 100%;
+}
+
+.slider-value {
+    text-align: right;
     font-size: 13px;
-    color: #555;
+    color: #666;
 }
 
-.reasonButtons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    resize: vertical;
 }
 
-.reasonButtons button {
-    padding: 8px 14px;
-    font-size: 13px;
-    border-radius: 9999px;
-    border: 1px solid #ccc;
-    background: #fff;
-    cursor: pointer;
-}
-
-.reasonButtons button:hover {
-    border-color: #111;
-}
-
-/* 非表示 */
-.hidden {
-    display: none;
-}
-
-/* 下部 */
-.footer {
-    margin-top: 40px;
-}
-
-.nextButton {
+.next-button {
     width: 100%;
     padding: 14px;
-    font-size: 16px;
-    border-radius: 9999px;
-    border: none;
     background: #111;
     color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.next-button:hover {
+    opacity: 0.85;
+}
+
+.note {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
 }

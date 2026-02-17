@@ -1,33 +1,42 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './style.module.css';
+import { NAVIGATION_LIST } from '../../const/navigation';
 
 export const MonthlyCheckInTemplate = () => {
+    const navigate = useNavigate();
+    const handleView = () => {
+        navigate(NAVIGATION_LIST.SUMMARY);
+    }
+
     return (
-        <main className={styles.container}>
-            <header className={styles.header}>
+        <div className={styles.container}>
+            <header>
                 <h1>今月のふりかえり</h1>
-                <button className={styles.skip}>スキップ</button>
+                {/* スキップを押したらログインユーザーのトップページに飛ばす */}
+                <button className={styles.skip} onClick={handleView}>スキップ</button>
             </header>
             <section className={styles.card}>
-                <h2 className={styles.serviceName}>Netflix</h2>
-                <p className={styles.question}>今月どうでしたか？</p>
-                <div className={styles.emojiRow}>
-                    <button className={styles.emoji}>😊</button>
-                    <button className={styles.emoji}>😐</button>
-                    <button className={styles.emoji}>😞</button>
+                <div className={styles.serviceName}>Netflix</div>
+                <div className={styles.price}>月額 1,490円</div>
+
+                <div className={styles.inputArea}>
+                    <div className={styles.label}>今月の利用回数</div>
+                    <input type="number" placeholder="例：3" />
                 </div>
-                <div className={`${styles.reason} ${styles.hidden}`}>
-                    <p className={styles.reasonLabel}>使わなかった理由（あれば）</p>
-                    <div className={styles.reasonButtons}>
-                        <button>忙しかった</button>
-                        <button>気分じゃなかった</button>
-                        <button>期待と違った</button>
-                        <button>忘れてた</button>
+                <div className={styles.inputArea}>
+                    <div className={styles.label}>今月の満足度</div>
+                    <div className={styles.emojiRow}>
+                        <button>😊</button>
+                        <button>😐</button>
+                        <button>😞</button>
                     </div>
                 </div>
+                <div className={styles.inputArea}>
+                    <div className={styles.label}>メモ（任意）</div>
+                    <textarea placeholder="気づいたことがあれば"></textarea>
+                </div>
             </section>
-            <footer className={styles.footer}>
-                <button className={styles.nextButton}>次へ</button>
-            </footer>
-        </main>
+            <button className={styles.nextButton}>次へ</button>
+        </div>
     )
 }

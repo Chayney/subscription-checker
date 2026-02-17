@@ -2,5 +2,8 @@ export const NAVIGATION_LIST = {
     TOP: '/',
     CREATE: '/create',
     CHECKIN: '/checkin',
-    SUMMARY: '/summary'
+    SUMMARY: '/summary',
+    REGISTER: '/register',
+    LOGIN: '/login',
+    TENTATIVEREGISTER: '/tentative'
 }
