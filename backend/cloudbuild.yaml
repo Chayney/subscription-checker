@@ -1,0 +1,30 @@
+steps:
+  # 1. Docker Build
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/backend-api/backend-api',
+      '-f',
+      './docker/node/Dockerfile.production',
+      '.'
+    ]
+
+  # 2. Docker Push
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/backend-api/backend-api'
+    ]
+
+  # 3. Cloud Runデプロイ
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args: [
+      'run', 'deploy', 'backend-api',
+      '--image', 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/backend-api/backend-api',
+      '--region', 'asia-northeast1',
+      '--platform', 'managed',
+      '--allow-unauthenticated',
+      '--port', '8080'
+    ]
