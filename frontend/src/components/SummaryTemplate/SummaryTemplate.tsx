@@ -11,6 +11,7 @@ import {
     ResponsiveContainer
 } from "recharts";
 import { NAVIGATION_LIST } from '../../const/navigation';
+import { Button } from '../../ui/button';
 
 const data: DataPoint[] = [
     { month: "3ヶ月前", count: 12 },
@@ -31,9 +32,9 @@ export const SummaryTemplate = () => {
             {/* 振り返るを押したら月次チェックインページに飛ぶ */}
             <div className={styles.navigation}>
                 {/* すでに月次チェックイン済みなら非表示 */}
-                <button className={styles.skip} onClick={handleView}>振り返る</button>
+                <Button onClick={handleView} variant="secondary">振り返る</Button>
 
-                <button className={styles.skip}>ログアウト</button>
+                <Button variant="secondary">ログアウト</Button>
             </div>
             <div className={styles.subtitle}>
                 {/* purposeを使う */}
@@ -65,23 +66,6 @@ export const SummaryTemplate = () => {
                     支払総額：9,000円
                 </div>
             </div>
-
-            {/* <div className={styles.section}>
-                <div className={styles.question}>
-                    このサブスクは、今後も使用したいと思いますか？
-                </div>
-                <div className={styles.buttonGroup}>
-                    
-                    <button className={styles.btnYes}>思います</button>
-                    
-                    <button className={styles.btnMaybe}>迷っている</button>
-                    
-                    <button className={styles.btnNo}>思わない</button>
-                </div>
-            </div>
-            <div className={styles.note}>
-                今すぐ決めなくても大丈夫です。
-            </div> */}
         </div>
     )
 }

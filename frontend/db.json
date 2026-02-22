@@ -1,3 +1,68 @@
 {
-  "subscription": []
+  "subscription": [
+    {
+      "name": "fff",
+      "price": 555,
+      "billing_day": 21,
+      "purpose": "学習",
+      "status": "active",
+      "id": 1
+    },
+    {
+      "name": "fff",
+      "price": 555,
+      "billing_day": 21,
+      "purpose": "学習",
+      "status": "active",
+      "id": 2
+    },
+    {
+      "name": "rrrr",
+      "price": 222,
+      "billing_day": 22,
+      "purpose": "健康",
+      "status": "active",
+      "id": 3
+    },
+    {
+      "name": "rrrr",
+      "price": 222,
+      "billing_day": 22,
+      "purpose": "健康",
+      "status": "active",
+      "id": 4
+    }
+  ],
+  "register": [
+    {
+      "name": "ナルミ",
+      "password": "11111111",
+      "is_guest": true,
+      "id": 1
+    },
+    {
+      "name": "シノン",
+      "password": "11111111",
+      "is_guest": false,
+      "createdAt": "2026-02-17T13:10:48.264Z",
+      "updatedAt": "2026-02-17T13:10:48.265Z",
+      "id": 2
+    },
+    {
+      "name": "キリト",
+      "password": "11111111",
+      "is_guest": false,
+      "createdAt": "2026-02-17T13:12:22.332Z",
+      "updatedAt": "2026-02-17T13:12:22.332Z",
+      "id": 3
+    },
+    {
+      "name": "クライン",
+      "password": "11111111",
+      "is_guest": false,
+      "createdAt": "2026-02-18T13:07:01.386Z",
+      "updatedAt": "2026-02-18T13:07:01.386Z",
+      "id": 4
+    }
+  ]
 }

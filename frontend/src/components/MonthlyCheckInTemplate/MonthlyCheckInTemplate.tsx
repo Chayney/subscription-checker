@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './style.module.css';
 import { NAVIGATION_LIST } from '../../const/navigation';
+import { Button } from '../../ui/button';
 
 export const MonthlyCheckInTemplate = () => {
     const navigate = useNavigate();
@@ -36,7 +37,7 @@ export const MonthlyCheckInTemplate = () => {
                     <textarea placeholder="気づいたことがあれば"></textarea>
                 </div>
             </section>
-            <button className={styles.nextButton}>次へ</button>
+            <Button variant="secondary">TOPページへ</Button>
         </div>
     )
 }

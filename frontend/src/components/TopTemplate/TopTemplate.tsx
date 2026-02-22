@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './style.module.css';
 import { NAVIGATION_LIST } from '../../const/navigation';
+import { Button } from '../../ui/button';
 
 export const TopTemplate = () => {
     const navigate = useNavigate();
@@ -36,7 +37,7 @@ export const TopTemplate = () => {
             </section>
             
             <div className={styles.area}>
-                <button className={styles.button} onClick={handleLoginView}>登録済みの方はこちら</button>
+                <Button onClick={handleLoginView} variant="secondary">登録済みの方はこちら</Button>
             </div>
         </main>
     )

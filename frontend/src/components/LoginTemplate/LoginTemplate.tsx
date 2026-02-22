@@ -1,3 +1,4 @@
+import { Button } from '../../ui/button';
 import styles from './style.module.css';
 
 export const LoginTemplate = () => {
@@ -12,7 +13,7 @@ export const LoginTemplate = () => {
                     <input className={styles.input} type="password" name="password" placeholder="Password" />
                 </div>
                 <div className={styles.area}>
-                    <button className={styles.button} type="submit">ログイン</button>
+                    <Button type="submit" variant="secondary">ログイン</Button>
                 </div>
             </form>
         </div>
