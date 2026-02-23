@@ -14,33 +14,52 @@ dotenv.config({ path: '/env' });
 export const app = express();
 
 export const start = async () => {
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 8080;
     const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
-    console.log(FRONTEND_URL)
+
+    // try {
+    //     await AppDataSource.initialize();
+
+    //     // CORS設定
+    //     app.use(cors({
+    //         origin: FRONTEND_URL,
+    //         credentials: true,
+    //     }));
+
+    //     app.use(express.json());
+
+    //     app.use('/api', subscriptionRouter);
+
+    //     // テスト実行時サーバー起動しない
+    //     if (process.env.NODE_ENV !== 'test') {
+    //         app.listen(PORT, () => {
+    //             console.log(`✅ Server is running on http://localhost:${PORT}`);
+    //         });
+    //     }
+
+    // } catch (error) {
+    //     console.error('DB connection error', error);
+    // }
+
 
     try {
         await AppDataSource.initialize();
-
-        // CORS設定
-        app.use(cors({
-            origin: FRONTEND_URL,
-            credentials: true,
-        }));
-
-        app.use(express.json());
-
-        app.use('/api', subscriptionRouter);
-
-        // テスト実行時サーバー起動しない
-        if (process.env.NODE_ENV !== 'test') {
-            app.listen(PORT, () => {
-                console.log(`✅ Server is running on http://localhost:${PORT}`);
-            });
-        }
-
+        console.log("✅ DB connected");
     } catch (error) {
         console.error('DB connection error', error);
     }
+
+    app.use(cors({
+        origin: FRONTEND_URL,
+        credentials: true,
+    }));
+
+    app.use(express.json());
+    app.use('/api', subscriptionRouter);
+
+    app.listen(Number(PORT), "0.0.0.0", () => {
+        console.log(`✅ Server is running on port ${PORT}`);
+    });
 };
 
 if (process.env.NODE_ENV !== 'test') {
