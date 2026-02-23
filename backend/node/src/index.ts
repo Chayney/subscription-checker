@@ -2,14 +2,14 @@ import express from "express";
 import cors from "cors";
 
 // DB接続設定
-import { AppDataSource } from "./config/appDataSource";
+// import { AppDataSource } from "./config/appDataSource";
 import "reflect-metadata";
 
 import * as dotenv from 'dotenv';
 import { subscriptionRouter } from "./routes/subscription.route";
 
 // backendディレクトリ直下の.env参照
-dotenv.config({ path: '/env' });
+// dotenv.config({ path: '/env' });
 
 export const app = express();
 
