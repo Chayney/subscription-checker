@@ -21,14 +21,19 @@ export const start = async () => {
         // await AppDataSource.initialize();
 
         // CORS設定
-        app.use(cors({
-            origin: FRONTEND_URL,
-            credentials: true,
-        }));
+        // app.use(cors({
+        //     origin: FRONTEND_URL,
+        //     credentials: true,
+        // }));
 
         app.use(express.json());
 
-        app.use('/api', subscriptionRouter);
+        // app.use('/api', subscriptionRouter);
+
+        // デプロイ検証
+        app.get("/", (_req, res) => {
+            res.send({ message: "Hello World" });
+        });
 
         // テスト実行時サーバー起動しない
         if (process.env.NODE_ENV !== 'test') {
