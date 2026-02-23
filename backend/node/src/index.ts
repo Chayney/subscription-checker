@@ -14,7 +14,7 @@ import { subscriptionRouter } from "./routes/subscription.route";
 export const app = express();
 
 export const start = async () => {
-    const PORT = process.env.PORT || 8080;
+    const PORT = Number(process.env.PORT) || 8080;
     const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
 
     try {
@@ -32,7 +32,7 @@ export const start = async () => {
 
         // テスト実行時サーバー起動しない
         if (process.env.NODE_ENV !== 'test') {
-            app.listen(PORT, () => {
+            app.listen(PORT, '0.0.0.0', () => {
                 console.log(`✅ Server is running on http://localhost:${PORT}`);
             });
         }
