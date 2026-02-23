@@ -14,7 +14,7 @@ import { subscriptionRouter } from "./routes/subscription.route";
 export const app = express();
 
 export const start = async () => {
-    const PORT = Number(process.env.PORT) || 8080;
+    const PORT = process.env.PORT || 8080;
     const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
 
     try {
@@ -31,16 +31,16 @@ export const start = async () => {
         // app.use('/api', subscriptionRouter);
 
         // デプロイ検証
-        app.get("/", (_req, res) => {
-            res.send({ message: "Hello World" });
+        app.listen(PORT, () => {
+            console.log(`✅ Listening on ${PORT}`);
         });
 
         // テスト実行時サーバー起動しない
-        if (process.env.NODE_ENV !== 'test') {
-            app.listen(PORT, '0.0.0.0', () => {
-                console.log(`✅ Server is running on http://localhost:${PORT}`);
-            });
-        }
+        // if (process.env.NODE_ENV !== 'test') {
+        //     app.listen(PORT, '0.0.0.0', () => {
+        //         console.log(`✅ Server is running on http://localhost:${PORT}`);
+        //     });
+        // }
 
     } catch (error) {
         console.error('DB connection error', error);
